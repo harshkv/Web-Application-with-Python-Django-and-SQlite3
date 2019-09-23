@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content  %}
+ {% load crispy_forms_tags %}
+<h2> EDUCATION TABLE </h2>
+<table class="table table-bordered">
+    <thread>
+        <th> Education Name</th>
+        <th> Education Type</th>
+        <th> Education Universtiy </th>
+        <th> Employee Name </th>
+        <th> Employee Email </th>
+         <th> Action </th>
+
+    </thread>
+    {% for row in data %}
+    <tr>
+        <td>{{ row.edu_name }}</td>
+         <td>{{ row.edu_type }}</td>
+         <td>{{ row.edu_uni }}</td>
+        <td>{{ row.employee.emp_name }}</td>
+          <td>{{ row.employee.emp_email }}</td>
+         <td>
+             <span>
+                 <a class="btn btn-info -sm" href="/crud/eduview/{{row.id}}">VIEW</a>
+             <a class="btn btn-primary -sm" href="/crud/eduupdate/{{row.id}}">UPDATE</a>
+             <a class="btn btn-warning -sm delete" href="/crud/edudelete/{{row.id}}">DELETE</a>
+             </span>
+         </td>
+    </tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}

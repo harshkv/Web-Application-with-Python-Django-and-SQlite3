@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content  %}
+ {% load crispy_forms_tags %}
+<h2> form example</h2>
+
+<form action="" method="post" novalidate> {% csrf_token %}
+   <!--{{ form.as_p }}   this is to add a new paragraph, commented to use crispy-->
+
+{{form | crispy }}
+
+    <input class="btn btn-success" type="submit" value="submit">
+
+</form>
+
+
+{% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> form example</h1>
+
+</body>
+</html>

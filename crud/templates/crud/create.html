@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content  %}
+ {% load crispy_forms_tags %}
+<h2> form example</h2>
+
+<form action="" method="post" novalidate> {% csrf_token %}
+   <!--{{ form.as_p }}   this is to add a new paragraph, commented to use crispy-->
+
+{{form | crispy }}
+
+    <input class="btn btn-success" type="submit" value="submit">
+
+</form>
+
+<!--<script> -->
+<!--$(document).ready(function(){-->
+    <!--$('#load_data').click(function(){-->
+        <!--$.ajax({-->
+        <!--url:'/crud/load_data',-->
+        <!--type:'GET'-->
+        <!--success:function(res){-->
+        <!--var temp = '';-->
+        <!--for(var i in res){-->
+         <!--temp += '<tr><td>' +res[i].id-->
+         <!--}-->
+         <!--$('#data').append(temp);-->
+         <!--},-->
+         <!--error :function-->
+
+
+<!--</script>-->
+
+
+{% endblock %}
+
+

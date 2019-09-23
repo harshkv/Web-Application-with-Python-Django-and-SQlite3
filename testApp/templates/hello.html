@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+ {% block content %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+
+
+
+<h2> hello Django! </h2>
+<h2> {{ name }}</h2>
+<h2> {{ email }}</h2>
+<p> full list </p>
+<p>{{ l1.0 }} </p>
+
+
+{% for i in l1 %}
+<h2> {{ i }} </h2>
+{% endfor %}
+
+
+{% for key,value in d2.items %}
+<h3> {{ key }} : {{value }}  </h3>
+{% endfor %}
+
+{% if name == '' %}
+<h3> empty </h3>
+{% else %}
+<h2>Name: {{ name }}</h2>
+{% endif %}
+</body>
+</html>
+
+ {% endblock %}
